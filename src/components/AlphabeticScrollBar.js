@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import ResponsiveFontSize from 'react-native-responsive-fontsize';
 
-const ALPHABET = '#ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+const ALPHABET = '#ABCDEFGHIJKLMNOPQRSTUVWXYZÆØÅ'.split('');
 
 class AlphabeticScrollBar extends Component {
     constructor (props) {
@@ -31,7 +31,7 @@ class AlphabeticScrollBar extends Component {
     componentWillReceiveProps (newProps) {
         if (newProps.reverse !== this.props.reverse) {
             const alphabet = newProps.reverse ? [...ALPHABET].reverse() : ALPHABET;
-            
+
             this.setState({
                 alphabet
             });
@@ -62,7 +62,7 @@ class AlphabeticScrollBar extends Component {
         this.setState({
             activeLetter
         });
-        
+
         this.props.onScroll(activeLetter, this.state.activeLetterViewTop);
     }
 
@@ -96,7 +96,7 @@ class AlphabeticScrollBar extends Component {
                         <Text style={{
                             ...styles.letter,
                             ...this.props.fontColor ? {color: this.props.fontColor} : {},
-                            fontSize: ResponsiveFontSize(this.props.isPortrait ? 2 : 1.6) * this.props.fontSizeMultiplier, 
+                            fontSize: ResponsiveFontSize(this.props.isPortrait ? 2 : 1.6) * this.props.fontSizeMultiplier,
                         }}>
                             {letter}
                         </Text>
