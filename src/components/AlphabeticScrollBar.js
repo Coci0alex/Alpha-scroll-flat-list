@@ -39,7 +39,7 @@ class AlphabeticScrollBar extends Component {
     }
 
     getTouchedLetter (y) {
-        const top = y - (this.containerTop || 0) - 5;
+        const top = y - (this.containerTop || 0) - 12.5;
 
         if (top >= 1 && top <= this.containerHeight) {
             this.setState({
