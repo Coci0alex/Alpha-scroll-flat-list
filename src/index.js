@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { FlatList, View, Dimensions } from 'react-native';
 import debounce from 'lodash/debounce';
+import { Spacing } from '../../../src/styles';
 
 import AlphabeticScrollBar from './components/AlphabeticScrollBar';
 import AlphabeticScrollBarPointer from './components/AlphabeticScrollBarPointer';
@@ -81,7 +82,7 @@ export default class AlphaScrollFlatList extends Component {
             }
 
             if (index !== -1)
-                this.list.scrollToOffset({ animated: false, offset: index * this.props.itemHeight });
+                this.list.scrollToOffset({ animated: false, offset: index * this.props.itemHeight - Spacing.xLarge - Spacing.basedOnHeight(3.5) });
         }
     }
 

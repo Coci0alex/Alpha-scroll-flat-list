@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {Text, View} from 'react-native';
+import { Spacing } from '../../../../src/styles';
 
 class AlphabeticScrollBarPointer extends Component {
     render() {
@@ -9,7 +10,7 @@ class AlphabeticScrollBarPointer extends Component {
                 style={[
                     {
                         ...styles.container,
-                        top: this.props.top - 15,
+                        top: this.props.top - 15 + Spacing.xLarge - 7.5,
                         backgroundColor: this.props.color,
                     },
                     this.props.style
@@ -43,8 +44,8 @@ const styles = {
     },
     letter: {
         fontSize: 20,
-        fontWeight: 'bold', 
-        color: '#fff',
+        fontWeight: 'bold',
+        color: 'white',
         alignSelf: 'center',
         textAlign: 'center',
     }
